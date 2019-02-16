@@ -8,6 +8,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to left, rgba(20,123,211,0.8) 0%, rgba(0,128,128,1)100%);
 }
 
 code {
@@ -16,40 +17,63 @@ code {
 }
 
 
-/* Header */
-.large-header {
-  position: relative;
-  width: 100%;
-  background: #333;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center center;
-  z-index: 1;
+.heropanel--video {
+  font-family:sans-serif;
+  min-height:500px;
 }
-#large-header {
-  background-image: url("https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg");
-}
-.main-title {
-  position: absolute;
-  margin: 0;
-  padding: 0;
-  color: #f9f1e9;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate3d(-50%, -50%, 0);
-  transform: translate3d(-50%, -50%, 0);
-}
-.demo-1 .main-title {
-  text-transform: uppercase;
-  font-size: 4.2em;
-  letter-spacing: 0.1em;
-}
-.main-title .thin {
-  font-weight: 200;
-}
-@media only screen and (max-width: 768px) {
-  .demo-1 .main-title {
-    font-size: 3em;
+
+@keyframes gm-slidein {
+  from {
+      -webkit-transform:translate3d(0,-100%,0);
+      opacity:0;
+      transform:translate3d(0,-100%,0);
+  }
+  
+  to {
+      -webkit-transform:none;
+      opacity:1;
+      transform:none;
   }
 }
+
+.heropanel__content {
+  -moz-animation:gm-slidein 3s 1;
+  -ms-animation:gm-slidein 3s 1;
+  -o-animation:gm-slidein 3s 1;
+  -webkit-animation:gm-slidein 3s 1;
+  animation:gm-slidein 3s 1;
+  border-bottom:1px solid #FFF;
+  margin:0 auto;
+  max-width:50%;
+  padding:4em 0 2em;
+  text-align:center;
+}
+
+.heropanel__content h1 {
+  margin:0 0 .5em;
+  text-transform:uppercase;
+}
+
+.heropanel__content h1 a {
+  color:#FFF;
+  text-decoration:none;
+}
+
+.heropanel__content p {
+  color:#fff;
+  margin:0;
+  text-transform:uppercase;
+}
+
+@font-face {
+  font-family: 'SEGA LOGO FONT';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SEGA LOGO FONT'), url('SEGA.woff') format('woff');
+  }
+  
+  h1 {
+    font-family: 'SEGA LOGO FONT';
+    font-weight: 200;
+    color: #0ccac4;
+  }

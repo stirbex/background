@@ -28,7 +28,11 @@ class App extends Component {
           <h1>Loading</h1> :
           (
             <div className='tc'>
-          <h1 className='f1'>RoboFriends</h1>
+            <header>
+                <div className="heropanel__content">
+                <h1 className="f1">ROBOFRIENDS</h1>
+            </div>
+            </header>
           <SearchBox searchChange={this.onSearchChange}/>
             <CardList robots={filteredRobots} />
         </div>
